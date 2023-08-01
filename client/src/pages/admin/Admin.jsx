@@ -13,6 +13,8 @@ export default function Admin() {
   const [imgMsg, setimgMsg] = useState(false);
   const [imgMsgL, setimgMsgL] = useState(false);
   const navigate = useNavigate();
+  const [sucess, setSucess] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleImageChange = async (event) => {
     const file = event.target.files[0];
@@ -75,10 +77,10 @@ export default function Admin() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["books"] });
 
-      navigate("/");
+      setSucess(true);
     },
     onError: () => {
-      // setError(true);
+      setError(true);
     },
   });
 
@@ -200,13 +202,23 @@ export default function Admin() {
           {messageL ? "Uploading..." : message ? <p>File uploaded ✅</p> : null}
         </div>
       </div>
-      <div className="sucess">
-        <div className="sucessDetails">
-          <div className="logo">✔️</div>
-          <span>Book Added Sucessfully </span>
-          <Link to={"/"}>Redirect to home </Link>
+      {sucess ? (
+        <div className="sucess">
+          <div className="sucessDetails">
+            <div className="logo">✔️</div>
+            <span>Book Added Sucessfully </span>
+            <Link to={"/"}>Redirect to home </Link>
+          </div>
         </div>
-      </div>
+      ) : error ? (
+        <div className="error">
+          <div className="errorDetails">
+            <div className="logo">❌</div>
+            <span>Failed to add book try filling in the correct details</span>
+            <p onClick={() => setError(false)}>Go back</p>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }

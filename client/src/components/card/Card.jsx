@@ -11,13 +11,16 @@ export default function Card(book) {
           }
           alt=""
         />
+        {book?.book?.isLibrary && <span>library</span>}
       </div>
       <div className="details">
         <h2>{book?.book?.title}</h2>
         <p>{book?.book?.subtitle || "Click to know more about the topic"}</p>
         <span>
           BY:{" "}
-          {book.book.authors ? book?.book?.authors.map((author) => author).join(", ") : "Unknown"}
+          {book.book.authors
+            ? book?.book?.authors.map((author) => author).join(", ")
+            : "Unknown"}
         </span>
         <Link className="button" to={`/book/${book.book.id}`} target="blank">
           Read More

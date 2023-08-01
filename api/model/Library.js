@@ -14,7 +14,7 @@ const librarySchema = new Schema(
     img: { type: String },
     isLibrary: { type: Boolean, default: true },
     stars: { type: Number, default: 0 },
-    pdf: { type: String },
+    pdf: { type: String, required: true },
   },
   { timestamps: true }
 );

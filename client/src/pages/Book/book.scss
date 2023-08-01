@@ -1,81 +1,144 @@
-.book {
-  display: flex;
-  gap: 100px;
-  height: calc(100vh - 140px);
-  padding: 0 10px;
-
-  .active{
-    background-color: red !important;
-  }
-  .loader {
-    width: 100%;
-    height: 70vh;
+.option {
+  position: relative;
+  .sucess,
+  .error {
+    position: absolute;
+    top: 0;
+    padding: 0px 10px;
+    height: calc(100vh - 140px);
+    width: 100vw;
+    background-color: #c9c4c488;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    img {
-      animation: animate 1s infinite ease alternate;
+    .sucessDetails,
+    .errorDetails {
+      height: 80%;
+      width: 70%;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      gap: 20px;
+      flex-direction: column;
+      .logo {
+        font-size: 70px;
+      }
 
-      @keyframes animate {
-        to {
-          transform: translateY(30px);
-        }
+      span {
+        color: black;
+        font-size: 50px;
+        font-weight: 200;
+        text-align: center;
+      }
+      a {
+        color: blue;
+      }
+      p{
+        cursor: pointer;
+        color: rgb(75, 72, 72);
       }
     }
   }
-
-  .imgContainer {
-    flex: 1;
+  .book {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    height: 100%;
-    width: 100%;
+    gap: 100px;
+    height: calc(100vh - 140px);
+    padding: 0 10px;
 
-    img {
+    .active {
+      background-color: red !important;
+    }
+    .loader {
       width: 100%;
-      object-fit: contain;
-      height: 90%;
-    }
-    button {
-      padding: 10px;
-      outline: none;
-      border: none;
-      color: white;
-      background-color: red;
-      cursor: pointer;
-    }
-  }
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-  .details {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    overflow-y: scroll;
-    scrollbar-width: none;
+      img {
+        animation: animate 1s infinite ease alternate;
 
-    h1 {
-      font-size: 40px;
+        @keyframes animate {
+          to {
+            transform: translateY(30px);
+          }
+        }
+      }
     }
 
-    h3 {
-      font-weight: 500;
+    .imgContainer {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      height: 100%;
+      width: 100%;
+      position: relative;
+
+      img {
+        width: 100%;
+        object-fit: contain;
+        height: 90%;
+      }
+      button {
+        padding: 10px;
+        outline: none;
+        border: none;
+        color: white;
+        background-color: red;
+        cursor: pointer;
+      }
+      span {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 3px;
+        font-size: 10px;
+        background-color: red;
+      }
     }
 
-    p {
-      text-align: justify;
-      font-size: 20px;
-    }
+    .details {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      overflow-y: scroll;
+      scrollbar-width: none;
 
-    button {
-      width: max-content;
-      padding: 10px;
-      color: white;
-      background-color: green;
-      border: none;
-      cursor: pointer;
+      .bookDelete {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        button {
+          background-color: red;
+        }
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      h3 {
+        font-weight: 500;
+      }
+
+      p {
+        text-align: justify;
+        font-size: 20px;
+      }
+
+      button {
+        width: max-content;
+        padding: 10px;
+        color: white;
+        background-color: green;
+        border: none;
+        cursor: pointer;
+      }
     }
   }
 }

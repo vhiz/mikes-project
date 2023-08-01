@@ -103,7 +103,8 @@
       }
     }
   }
-  .sucess {
+  .sucess,
+  .error {
     position: absolute;
     top: 0;
     padding: 0px 10px;
@@ -114,7 +115,8 @@
     align-items: center;
     justify-content: center;
 
-    .sucessDetails {
+    .sucessDetails,
+    .errorDetails {
       height: 80%;
       width: 70%;
       background-color: white;
@@ -124,17 +126,22 @@
       border-radius: 10px;
       gap: 20px;
       flex-direction: column;
-      .logo{
+      .logo {
         font-size: 70px;
       }
 
-      span{
+      span {
         color: black;
         font-size: 50px;
         font-weight: 200;
+        text-align: center;
       }
-      a{
+      a {
         color: blue;
+      }
+      p{
+        cursor: pointer;
+        color: rgb(75, 72, 72);
       }
     }
   }
