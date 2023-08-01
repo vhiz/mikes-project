@@ -1,0 +1,86 @@
+.login {
+  background-color: #111;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p{
+    color: red;
+  }
+  .contanier {
+    height: 85vh;
+    width: 50vw;
+    display: flex;
+
+    .item {
+      &:nth-child(1) {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #bbb;
+
+        h1 {
+          margin-top: 10px;
+        }
+
+        .inputs {
+          margin-top: 150px;
+          align-items: center;
+          justify-content: center;
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+
+          .lock {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+              cursor: pointer;
+            }
+          }
+          button{
+            padding: 10px;
+            border: none;
+            background-color: green;
+            color: white;
+            cursor: pointer;
+          }
+
+          input {
+            padding: 20px;
+            outline: none;
+            border: none;
+            background-color: transparent;
+            border-bottom: 1px solid grey;
+          }
+        }
+
+        span {
+          margin-top: 50px;
+          a {
+            color: blue;
+          }
+        }
+      }
+      &:nth-child(2) {
+        flex: 1;
+        background: linear-gradient(#bdbaba93, #00000093),
+          url("/login.jpg") center;
+        background-size: cover;
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        h1 {
+          font-size: 50px;
+          font-family: "Times New Roman", Times, serif !important;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

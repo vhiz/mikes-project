@@ -1,0 +1,49 @@
+.card {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  width: 98%;
+  height: 300px;
+
+  &:nth-child(2n) {
+    flex-direction: row-reverse;
+  }
+
+  .imgContanier {
+    flex: 1;
+    img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  }
+
+  .details {
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    flex-direction: column;
+
+    h2 {
+      font-size: 30px;
+    }
+    p {
+      font-size: 18px;
+      text-align: justify;
+    }
+
+    span {
+      font-weight: bold;
+    }
+
+    .button {
+      width: max-content;
+      padding: 10px;
+      cursor: pointer;
+      background-color: green;
+      color: white;
+    }
+  }
+}

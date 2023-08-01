@@ -1,0 +1,28 @@
+.books {
+  padding: 0px 10px;
+  height: calc(100vh - 140px);
+  overflow-y: scroll;
+  scrollbar-width: none;
+  .list {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    height: 250px;
+    border-bottom: 1px solid grey;
+    cursor: pointer;
+    transition: all ease 0.8s;
+    &:hover{
+        background-color: #474646;
+    }
+    img {
+      height: 200px;
+      width: 200px;
+      object-fit: contain;
+    }
+    .details {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+}

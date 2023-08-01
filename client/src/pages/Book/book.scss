@@ -1,0 +1,81 @@
+.book {
+  display: flex;
+  gap: 100px;
+  height: calc(100vh - 140px);
+  padding: 0 10px;
+
+  .active{
+    background-color: red !important;
+  }
+  .loader {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      animation: animate 1s infinite ease alternate;
+
+      @keyframes animate {
+        to {
+          transform: translateY(30px);
+        }
+      }
+    }
+  }
+
+  .imgContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    width: 100%;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+      height: 90%;
+    }
+    button {
+      padding: 10px;
+      outline: none;
+      border: none;
+      color: white;
+      background-color: red;
+      cursor: pointer;
+    }
+  }
+
+  .details {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+
+    h1 {
+      font-size: 40px;
+    }
+
+    h3 {
+      font-weight: 500;
+    }
+
+    p {
+      text-align: justify;
+      font-size: 20px;
+    }
+
+    button {
+      width: max-content;
+      padding: 10px;
+      color: white;
+      background-color: green;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}

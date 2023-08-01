@@ -1,0 +1,51 @@
+.navbar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px;
+  height: 100px;
+  align-items: center;
+  .logo {
+    font-size: 40px;
+    cursor: pointer;
+    display: flex;
+    position: relative;
+
+    p {
+      position: absolute;
+      font-size: 10px;
+      padding: 5px;
+      background-color: red;
+      top: 0;
+      right: -15px;
+    }
+  }
+
+  .items {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    span {
+      font-weight: bold;
+      &:nth-child(1) {
+        cursor: pointer;
+      }
+    }
+
+    .link {
+      cursor: pointer;
+      padding: 5px;
+      background-color: rgb(243, 40, 40);
+      border-radius: 5px;
+    }
+    button {
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      font-weight: bold;
+      color: white;
+      background-color: green;
+    }
+  }
+}
