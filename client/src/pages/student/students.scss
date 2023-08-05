@@ -1,0 +1,132 @@
+.student {
+  padding: 0px 10px;
+  height: calc(100vh - 140px);
+  overflow-y: scroll;
+  scrollbar-width: none;
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 10px;
+    border-bottom: 1px solid grey;
+
+    .name {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+
+      button {
+        padding: 5px;
+        border: none;
+        outline: none;
+        background-color: green;
+        color: white;
+        border-radius: 2px;
+        cursor: pointer;
+      }
+    }
+
+    .search {
+      display: flex;
+      background-color: white;
+      border-radius: 5px;
+      align-items: center;
+      padding: 10px;
+      input {
+        border: none;
+        outline: none;
+        padding: 10px;
+        background-color: transparent;
+      }
+      p {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+
+    p {
+      cursor: pointer;
+    }
+
+    .thead {
+      width: 100%;
+      display: flex;
+      gap: 30px;
+    }
+
+    .tbody {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      overflow: hidden;
+    }
+
+    tr {
+      display: flex;
+      width: 100%;
+      gap: 30px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+}
+
+.addStudent {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.425);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all ease;
+
+  .contanier {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    height: 70vh;
+    width: 70vw;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+
+    input {
+      padding: 20px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: green;
+      color: white;
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
+
+    p {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 10px;
+      cursor: pointer;
+    }
+  }
+}

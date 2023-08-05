@@ -1,15 +1,16 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import "./register.scss";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/authContext";
 import { apiUrl } from "../../axios";
+
 export default function Register() {
   const [lock, setLock] = useState(true);
-  const { login } = useContext(AuthContext);
+
   const [inputs, setInputs] = useState({
     username: "",
     password: "",
     password_again: "",
+    adminPass: "",
   });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -25,7 +26,11 @@ export default function Register() {
     e.preventDefault();
     setLoading(true);
     try {
-      if (inputs.username.trim() === "" || inputs.password.trim() === "") {
+      if (
+        inputs.username.trim() === "" ||
+        inputs.password.trim() === "" ||
+        inputs.adminPass.trim() === ""
+      ) {
         alert("Please complete the form.");
         setLoading(false);
         return;
@@ -39,7 +44,7 @@ export default function Register() {
         alert("each input should have more than 5 characters");
         return;
       }
-      await apiUrl.post("auth/register", inputs);
+      await apiUrl.post("auth/adminReg", inputs);
 
       navigate("/login");
       setLoading(false);
@@ -48,12 +53,12 @@ export default function Register() {
     }
     setLoading(false);
   };
-  console.log(error);
+
   return (
     <div className="register">
       <div className="contanier">
         <div className="item">
-          <h1>Register</h1>
+          <h1>Register Admin</h1>
           <div className="inputs">
             <input
               type="text"
@@ -92,6 +97,16 @@ export default function Register() {
               value={inputs.password_again}
               onChange={handleChange}
             />
+            <input
+              type={lock ? "password" : "text"}
+              placeholder="Key"
+              id="adminPass"
+              name="adminPass"
+              min={5}
+              value={inputs.adminPass}
+              onChange={handleChange}
+            />
+
             <button onClick={handleSubmit}>Register</button>
             {error && error}
           </div>
@@ -100,7 +115,10 @@ export default function Register() {
           </span>
         </div>
         <div className="item">
-          <h1>Sign Up And Receive Vast Amount Of Knowledge</h1>
+          <h1>
+            You must have a key to register as an admin or meet an admin to
+            create your account
+          </h1>
         </div>
       </div>
     </div>

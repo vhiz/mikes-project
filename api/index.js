@@ -8,6 +8,8 @@ const app = express();
 
 import bookRoute from "./route/book.js";
 import authRoute from "./route/auth.js";
+import libRoute from "./route/lib.js";
+import studentRoute from "./route/student.js";
 
 app.use(helmet());
 app.use(express.json());
@@ -26,6 +28,8 @@ db();
 
 app.use("/api/book", bookRoute);
 app.use("/api/auth", authRoute);
+app.use("/api/lib", libRoute);
+app.use("/api/student", studentRoute);
 
 const Port = process.env.PORT || 3000;
 

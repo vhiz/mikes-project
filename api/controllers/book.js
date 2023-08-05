@@ -169,9 +169,10 @@ export const deleteBook = async (req, res) => {
   try {
     const deleteBook = await Library.findOneAndDelete({ id: req.params.id });
     if (!deleteBook) return res.status(404).json("No book Found");
-    res.status(200).json("Book deleted")
+    res.status(200).json("Book deleted");
   } catch (error) {
     console.error("Error while processing request:", error);
     return res.status(500).json({ error: "Internal Server Error" });
   }
 };
+

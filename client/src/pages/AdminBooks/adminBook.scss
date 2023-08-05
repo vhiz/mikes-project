@@ -1,0 +1,75 @@
+.adminBook {
+  padding: 0px 10px;
+  height: calc(100vh - 140px);
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  .top {
+    display: flex;
+    justify-content: space-between;
+    .search {
+      display: flex;
+      background-color: white;
+      border-radius: 5px;
+      align-items: center;
+      padding: 10px;
+      input {
+        border: none;
+        outline: none;
+        padding: 10px;
+        background-color: transparent;
+      }
+      p {
+        cursor: pointer;
+      }
+    }
+  }
+  .list {
+    width: 100%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    .Book {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      width: 98%;
+      height: 250px;
+      cursor: pointer;
+      margin-top: 10px;
+      padding: 10px;
+      border-bottom: 1px solid rgb(185, 184, 184);
+      .imgContanier {
+        flex: 1;
+        position: relative;
+        width: 100%;
+        height: 200px;
+        img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          border-radius: 5px;
+        }
+      }
+
+      .details {
+        flex: 2;
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+        flex-direction: column;
+      }
+      .items {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .button {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

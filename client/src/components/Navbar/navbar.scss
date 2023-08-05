@@ -21,6 +21,13 @@
     }
   }
 
+  .password{
+    padding: 10px;
+    background-color: red;
+    color: white;
+    font-size: 17px;
+    
+  }
   .items {
     display: flex;
     gap: 20px;
@@ -36,7 +43,7 @@
     .link {
       cursor: pointer;
       padding: 5px;
-      background-color: rgb(243, 40, 40);
+      font-size: 20px;
       border-radius: 5px;
     }
     button {
@@ -46,6 +53,30 @@
       font-weight: bold;
       color: white;
       background-color: green;
+    }
+  }
+}
+
+.manage {
+  background-color: white;
+  height: 100px;
+  width: 150px;
+  position: absolute;
+  right: 115px;
+  top: 70px;
+  border-radius: 10px 0px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+
+  p {
+    padding: 5px;
+    cursor: pointer;
+    border-top: 1px solid rgb(212, 212, 212);
+    color: black;
+    &:nth-child(1){
+      border: none !important;
+      cursor: pointer;
     }
   }
 }

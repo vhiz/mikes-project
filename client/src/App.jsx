@@ -1,4 +1,4 @@
-import React, { Suspense, useContext } from "react";
+import React, { Suspense, useContext, useState } from "react";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import "./style/global.scss";
@@ -13,6 +13,8 @@ import Register from "./pages/Register/Register";
 import Books from "./pages/Books/Books";
 import { AuthContext } from "./context/authContext";
 import Admin from "./pages/admin/Admin";
+import Student from "./pages/student/Student";
+import AdminBooks from "./pages/AdminBooks/AdminBooks";
 
 const Home = React.lazy(() => import("./pages/Home/Home"));
 const Book = React.lazy(() => import("./pages/Book/Book"));
@@ -21,12 +23,13 @@ export default function App() {
   const Layout = () => {
     return (
       <div className="main">
-        <Navbar />
+        <Navbar o={open} So={setOPen}/>
         <Outlet />
         <Footer />
       </div>
     );
   };
+ const [open, setOPen] = useState(false)
 
   const { currentUser } = useContext(AuthContext);
 
@@ -39,7 +42,7 @@ export default function App() {
           path: "/",
           element: (
             <Suspense fallback={<>...</>}>
-              <Home />
+              <Home open={open} setOpen={setOPen}/>
             </Suspense>
           ),
         },
@@ -52,8 +55,20 @@ export default function App() {
           element: <Books />,
         },
         {
-          path: "/admin",
+          path: "/addBook",
           element: currentUser?.isAdmin ? <Admin /> : <Navigate to={"/"} />,
+        },
+        {
+          path: "/students",
+          element: currentUser?.isAdmin ? <Student /> : <Navigate to={"/"} />,
+        },
+        {
+          path: "/adminBooks",
+          element: currentUser?.isAdmin ? (
+            <AdminBooks />
+          ) : (
+            <Navigate to={"/"} />
+          ),
         },
       ],
     },
