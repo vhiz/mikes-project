@@ -72,7 +72,7 @@ export default function Login() {
             <p>{error ? error : loading ? "Loading..." : null}</p>
           </div>
           <span>
-            Don't have an account? <Link to={"/register"}>Register</Link>
+            Don't have an account (admin only)? <Link to={"/register"}>Register</Link>
           </span>
         </div>
         <div className="item">
